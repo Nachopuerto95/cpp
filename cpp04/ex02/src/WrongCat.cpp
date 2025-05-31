@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:41:48 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 20:47:50 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/05/31 13:42:27 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:42:28 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/WrongCat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : _type("Animal")
+WrongCat::WrongCat() : WrongAnimal()
 {
-	std::cout << RED << this->_type << " was created with default constructor"<< RESET << std::endl;
+	this->_type = "WrongCat";
+	std::cout << BLUE << this->_type << " was created with default constructor"<< RESET << std::endl;
 }
 
-Animal::Animal(std::string type)
+WrongCat::WrongCat( const WrongCat & src )  : WrongAnimal()
 {
-	this->_type = type;
-	std::cout << RED << this->_type << " was constructedr"<< RESET << std::endl;
-}
-
-Animal::Animal( const Animal & src )
-{
-	std::cout << RED << this->_type << " was copied"<< RESET << std::endl;
+	std::cout << BLUE << this->_type << " was copied"<< RESET << std::endl;
 	*this = src;
 }
 
@@ -38,9 +33,9 @@ Animal::Animal( const Animal & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+WrongCat::~WrongCat()
 {
-	std::cout << RED << this->_type << " was deleted"<< RESET << std::endl;
+	std::cout << BLUE << this->_type << " was deleted"<< RESET << std::endl;
 }
 
 
@@ -48,20 +43,14 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 {
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
 	}
-	std::cout << RED << this->_type << ": Copy assignment called"<< RESET << std::endl;
+	std::cout << BLUE << this->_type << ": Copy assignment called"<< RESET << std::endl;
 	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
-{
-	o << RED << "Type = " << i.getType() << RESET;
-	return o;
 }
 
 
@@ -69,11 +58,7 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Animal::makeSound(void)const
+void WrongCat::makeSound(void)const
 {
-}
-
-std::string Animal::getType()const
-{
-	return this->_type;
+	std::cout << BLUE << this->_type << ": *MEEEEOOOOWW*"<< RESET << std::endl;
 }

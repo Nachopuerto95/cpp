@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:34:47 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 20:56:45 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/05/31 13:39:27 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:41:10 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGWrongANIMAL_HPP
+# define WRONGWrongANIMAL_HPP
 
 # include <iostream>
 # include <string>
-# include <stdio.h>
-# include <stdlib.h>
 #define RESET "\033[0m"
-#define RED "\033[31m"
+#define MAG "\033[35m"
 
-class Animal
+class WrongAnimal
 {
 
 	public:
 
-		Animal(std::string type);
-		Animal( Animal const & src );
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal( WrongAnimal const & src );
 
-		virtual ~Animal();
+		~WrongAnimal();
 
-		Animal &operator=( Animal const & rhs );
-		virtual void makeSound(void)const;
+		WrongAnimal &operator=( WrongAnimal const & rhs );
+		void makeSound(void)const;
 		std::string getType()const;
-		Animal();
 
 	protected:
 		 std::string _type;
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i );
+std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i );
 
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ********************************************************** WrongANIMAL_H */
