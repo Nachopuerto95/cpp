@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:30:53 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:38:07 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGWrongANIMAL_HPP
 # define WRONGWrongANIMAL_HPP
 
@@ -23,11 +35,10 @@ class WrongAnimal
 
 	protected:
 		 std::string _type;
-		 friend std::ostream &operator<<( std::ostream & o, WrongAnimal const & i );
-
 
 };
 
 std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i );
+
 
 #endif /* ********************************************************** WrongANIMAL_H */

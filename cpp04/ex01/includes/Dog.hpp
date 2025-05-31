@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:39:22 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:41:23 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DOG_HPP
 # define DOG_HPP
 
@@ -21,11 +33,7 @@ class Dog : public Animal
 
 	private:
 		Brain* _brain;
-		friend std::ostream &operator<<( std::ostream & o, Dog const & i );
-
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
 #endif 

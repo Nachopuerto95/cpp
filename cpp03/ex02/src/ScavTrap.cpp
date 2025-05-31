@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:27:14 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:28:36 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ScavTrap.hpp"
 
 /*
@@ -53,16 +65,6 @@ ScavTrap &				ScavTrap::operator=( ScavTrap const & rhs )
 	std::cout << "Copy assignment operator called by ScavTrap" << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i )
-{
-	o << "ClapTrap " << i._name
-	  << " [HP: " << i._hitPoints
-	  << ", Energy: " << i._energyPoints
-	  << ", Attack: " << i._attackDamage << "]";
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

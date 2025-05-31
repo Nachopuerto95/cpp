@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:31:00 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:31:52 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Animal.hpp"
 
 /*
@@ -48,7 +60,7 @@ Animal &				Animal::operator=( Animal const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Animal const & i )
 {
-	o << RED << "Type = " << i._type << RESET;
+	o << RED << "Type = " << i.getType() << RESET;
 	return o;
 }
 

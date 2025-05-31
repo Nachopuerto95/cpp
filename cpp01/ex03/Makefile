@@ -3,7 +3,7 @@ NAME = violence
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

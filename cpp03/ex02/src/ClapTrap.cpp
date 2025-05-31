@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:27:25 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:27:26 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ClapTrap.hpp"
 
 /*
@@ -53,10 +65,10 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 
 std::ostream & operator<<(std::ostream & o, ClapTrap const & i)
 {
-	o << "ClapTrap " << i._name
-	  << " [HP: " << i._hitPoints
-	  << ", Energy: " << i._energyPoints
-	  << ", Attack: " << i._attackDamage << "]";
+	o << "ClapTrap " << i.getName()
+	  << " [HP: " << i.getHitPoints()
+	  << ", Energy: " << i.getEnergyPoints()
+	  << ", Attack: " << i.getAttackDamage() << "]";
 	return o;
 }
 
@@ -123,5 +135,20 @@ void ClapTrap::beRepaired(unsigned int amount)
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+std::string ClapTrap::getName() const {
+    return this->_name;
+}
+
+int ClapTrap::getHitPoints() const {
+    return this->_hitPoints;
+}
+
+int ClapTrap::getEnergyPoints() const {
+    return this->_energyPoints;
+}
+
+int ClapTrap::getAttackDamage() const {
+    return this->_attackDamage;
+}
 
 /* ************************************************************************** */

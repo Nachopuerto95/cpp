@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:31:18 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:32:17 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/WrongAnimal.hpp"
 
 /*
@@ -48,7 +60,7 @@ WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i )
 {
-	o << MAG << "Type = " << i._type << RESET;
+	o << MAG << "Type = " << i.getType() << RESET;
 	return o;
 }
 

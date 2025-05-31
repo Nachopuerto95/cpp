@@ -3,7 +3,7 @@ NAME = sed
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp sedIsForLosers.cpp
+SRCS = main.cpp src/sedIsForLosers.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

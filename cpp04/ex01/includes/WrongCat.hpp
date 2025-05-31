@@ -19,10 +19,7 @@ class WrongCat : public WrongAnimal
 		void makeSound(void)const;
 
 	private:
-		 friend std::ostream &operator<<( std::ostream & o, WrongCat const & i );
 
 };
-
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
 
 #endif 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:30:50 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:37:46 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DOG_HPP
 # define DOG_HPP
 
@@ -19,11 +31,7 @@ class Dog : public Animal
 		void makeSound(void)const;
 
 	private:
-		 friend std::ostream &operator<<( std::ostream & o, Dog const & i );
-
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
 #endif 

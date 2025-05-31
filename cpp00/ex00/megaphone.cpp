@@ -1,53 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 12:36:05 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 12:36:06 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-
-class Hello
-{
-    public:
-        void Print(void);
-        void Print(std::string msg);
-};
-
-void Hello::Print(void)
-{
-    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-};
-
-void Hello::Print(std::string msg)
-{
-    int i = 0;
-    char c;
-
-    while (msg[i])
-    {
-        if (msg[i] >= 'a' && msg[i] <= 'z')
-        {
-            c = msg[i] - 32;
-            std::cout << c;
-        }
-        else
-            std::cout << msg[i];
-        i++;
-    }
-   
-};
 
 int main(int argc, char **argv)
 {
-    Hello my_obj;
-    if (argc > 1)
-    {
-        argv++;
-        while (*argv)
-        {
-            my_obj.Print(*argv);
-            argv++;
-        }
-        std::cout << std::endl;
-    }
-    else
-    {
-        my_obj.Print();
-    }
-
-    return 0;
+	if (argc > 1)
+	{
+		for (int i = 1; i < argc; i++)
+		{
+			for (int j = 0; argv[i][j] != '\0'; j++)
+				argv[i][j] = (char)toupper(argv[i][j]);
+			std::cout << argv[i];
+			if (argv[i] != NULL)
+				std::cout << " ";
+		}
+		std::cout << std::endl;
+	}
+	else
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	return (0);
 }

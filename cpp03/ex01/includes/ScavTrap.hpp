@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:25:27 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:25:28 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
@@ -22,7 +34,6 @@ class ScavTrap : public ClapTrap
 
 	private:
 		bool _isGuarding;
-		friend std::ostream& operator<<(std::ostream& o, const ScavTrap& i);
 };
 
 #endif

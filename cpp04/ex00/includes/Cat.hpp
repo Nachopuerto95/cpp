@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:30:44 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:30:45 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CAT_HPP
 # define CAT_HPP
 
@@ -19,11 +31,8 @@ class Cat : public Animal
 		void makeSound(void)const;
 
 	private:
-		 friend std::ostream &operator<<( std::ostream & o, Cat const & i );
-
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
 
 #endif 

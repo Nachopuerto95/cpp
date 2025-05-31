@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:31:12 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:31:59 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Cat.hpp"
 
 /*
@@ -40,13 +52,6 @@ Cat &				Cat::operator=( Cat const & rhs )
 	std::cout << GREEN << this->_type << ": Copy assignment called"<< RESET << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i )
-{
-	o << GREEN << "Type = " << i._type << RESET;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:15:27 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:20:57 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 #define RESET "\033[0m"
@@ -24,14 +36,18 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 		
 		ClapTrap &		operator=( ClapTrap const & rhs );
+
+		// ACCESOR
+		std::string getName() const;
+		int getHitPoints() const;
+		int getEnergyPoints() const; 
+		int getAttackDamage() const;
 	
 	private:
 		std::string _name;
 		int	_hitPoints;
 		int	_energyPoints;
-		int	_attackDamage;
-		friend std::ostream& operator<<(std::ostream& o, const ClapTrap& i);
-	
+		int	_attackDamage;	
 };
 
 std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );

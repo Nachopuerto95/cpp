@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:27:31 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:27:54 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
@@ -21,7 +33,6 @@ class FragTrap : public ClapTrap
 
 	private:
 		bool _isGuarding;
-		friend std::ostream& operator<<(std::ostream& o, const FragTrap& i);
 };
 
 #endif

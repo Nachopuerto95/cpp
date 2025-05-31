@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 12:50:38 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 12:50:39 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-#include "PhoneBook.hpp"
+#include "includes/PhoneBook.hpp"
 
 int main() {
     std::string command;
     PhoneBook book;
     
     book.printHeader("phonebook");
+    // book.fillTestContacts();
     while (true) 
     {
         book.welcome();
@@ -21,9 +34,7 @@ int main() {
         }
         else if (command == "ADD")
         {
-            if (book.count < 8)
-                book.count++;
-            book.contacts[book.count - 1] = book.addContact(book.count - 1);
+            book.addContact();
         }
         else if (command == "SEARCH")
            book.search();

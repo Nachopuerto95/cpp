@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:31:22 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:32:24 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/WrongCat.hpp"
 
 /*
@@ -40,13 +52,6 @@ WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 	std::cout << BLUE << this->_type << ": Copy assignment called"<< RESET << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
-{
-	o << BLUE << "Type = " << i._type << RESET;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------

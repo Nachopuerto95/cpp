@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/31 13:27:19 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/05/31 13:28:43 by jpuerto          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/FragTrap.hpp"
 
 /*
@@ -51,16 +63,6 @@ FragTrap &				FragTrap::operator=( FragTrap const & rhs )
 	std::cout << "Copy assignment operator called by FragTrap" << std::endl;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, FragTrap const & i )
-{
-	o << "ClapTrap " << i._name
-	  << " [HP: " << i._hitPoints
-	  << ", Energy: " << i._energyPoints
-	  << ", Attack: " << i._attackDamage << "]";
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
