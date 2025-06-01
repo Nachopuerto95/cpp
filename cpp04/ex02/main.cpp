@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:43:55 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 20:57:20 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/01 12:42:31 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	// animal->makeSound();
 	
 	//     // SUBJECT MAIN
-    const Animal* meta = new Animal();
+    // const Animal* meta = new Animal();
 	
     const Animal* j = new Dog();
     const Animal* i = new Cat();
@@ -33,7 +33,7 @@ int main()
     std::cout << i->getType() << " " << std::endl;
     i->makeSound();
     j->makeSound();
-    meta->makeSound();
+    // meta->makeSound();
 
 //     // Animal a;
 //     // Cat b;
