@@ -3,7 +3,7 @@ NAME = fixed
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = src/main.cpp src/Fixed.cpp
+SRCS = src/main.cpp src/Fixed.cpp src/bsp.cpp src/Point.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 

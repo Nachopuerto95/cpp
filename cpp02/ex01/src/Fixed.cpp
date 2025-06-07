@@ -6,11 +6,11 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:14:03 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:14:04 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/07 11:11:09 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 const int Fixed::_fbits = 8;
 
@@ -23,13 +23,13 @@ Fixed::Fixed(void) : _value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int input) : _value(0)
+Fixed::Fixed(const int input)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_value = roundf(input * (1 << this->_fbits));
 }
 
-Fixed::Fixed(const float input) : _value(0)
+Fixed::Fixed(const float input)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(input * (1 << this->_fbits));
@@ -80,6 +80,11 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 int	Fixed::getRawBits(void)const
 {
 	return (this->_value);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->_value = raw;
 }
 
 float	Fixed::toFloat(void)const

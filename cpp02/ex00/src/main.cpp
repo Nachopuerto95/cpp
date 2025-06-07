@@ -6,11 +6,11 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:10:03 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:11:02 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/07 11:27:39 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int main( void )
 {
