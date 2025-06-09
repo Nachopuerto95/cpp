@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:30:57 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 10:00:11 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/06/08 11:25:17 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/08 11:26:19 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGWrongCAT_HPP
-# define WRONGWrongCAT_HPP
+#include "../includes/AMateria.hpp"
+#include "../includes/ICharacter.hpp"
 
-#include "WrongAnimal.hpp"
-#define RESET "\033[0m"
-#define BLUE "\033[34m"
-
-class WrongCat : public WrongAnimal
+int main()
 {
-
-	public:
-
-		WrongCat();
-		WrongCat( WrongCat const & src );
-
-		~WrongCat();
-
-		WrongCat &operator=( WrongCat const & rhs );
-		void makeSound(void)const;
-
-	private:
-
-};
-
-#endif 
+    return 0;
+}

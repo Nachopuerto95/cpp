@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:39:09 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 10:32:55 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/06/08 14:01:53 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/08 14:02:37 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include <iostream>
 # include <string>
+# include "AMateria.hpp"
 
-class Brain
+class Ice: public AMateria
 {
-
 	public:
+        Ice();
+        Ice(Ice const & copy);
 
-		Brain();
-		Brain( Brain const & src );
-		~Brain();
-
-		Brain &		operator=( Brain const & rhs );
-		
-		void setIdea(int index, const std::string& idea);
-    	std::string getIdea(int index) const;
-
-	private:
-		std::string _ideas[100];
-
+        Ice &operator=(Ice const & src);
+        AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
-#endif /* *********************************************************** BRAIN_H */
+std::ostream &			operator<<( std::ostream & o, AMateria const & i );
+
+#endif /* ******************************************************** AMATERIA_H */

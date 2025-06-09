@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:30:57 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 10:00:11 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/05/31 13:27:31 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/07 13:10:14 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGWrongCAT_HPP
-# define WRONGWrongCAT_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include "WrongAnimal.hpp"
-#define RESET "\033[0m"
-#define BLUE "\033[34m"
+#define MAG "\033[95m"
+#define BLUE "\033[94m"
+# include <iostream>
+# include <string>
+# include "ClapTrap.hpp"
 
-class WrongCat : public WrongAnimal
+class FragTrap : virtual public ClapTrap
 {
-
 	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& src);
+		~FragTrap();
 
-		WrongCat();
-		WrongCat( WrongCat const & src );
+		FragTrap& operator=(const FragTrap& rhs);
 
-		~WrongCat();
-
-		WrongCat &operator=( WrongCat const & rhs );
-		void makeSound(void)const;
+		void highFiveGuys(void);
 
 	private:
-
+		bool _isGuarding;
 };
 
-#endif 
+#endif

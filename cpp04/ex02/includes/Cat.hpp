@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:39:19 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:39:20 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 10:33:33 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ class Cat : public Animal
 		Cat();
 		Cat( Cat const & src );
 
-		~Cat();
+		virtual ~Cat();
 
 		Cat &operator=( Cat const & rhs );
 		void makeSound(void)const;
+		Brain* getBrain() const;
 
 	private:
 		 Brain* _brain;

@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:39:09 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 10:32:55 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/05/31 13:27:29 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/07 13:39:53 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
+#define MAG "\033[95m"
+#define BLUE "\033[94m"
 # include <iostream>
 # include <string>
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-class Brain
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-
 	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap& src);
+		~DiamondTrap();
 
-		Brain();
-		Brain( Brain const & src );
-		~Brain();
+		DiamondTrap& operator=(const DiamondTrap& rhs);
 
-		Brain &		operator=( Brain const & rhs );
-		
-		void setIdea(int index, const std::string& idea);
-    	std::string getIdea(int index) const;
+		void attack(const std::string& target);
+		void whoAmI(void);
 
 	private:
-		std::string _ideas[100];
-
+		std::string _name;
 };
 
-#endif /* *********************************************************** BRAIN_H */
+#endif

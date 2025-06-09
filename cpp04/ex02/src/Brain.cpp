@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:42:04 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:42:05 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 10:32:52 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,15 @@ Brain &				Brain::operator=( Brain const & rhs )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+void Brain::setIdea(int index, const std::string& idea) {
+    if (index >= 0 && index < 100)
+        _ideas[index] = idea;
+}
+
+std::string Brain::getIdea(int index) const {
+    if (index >= 0 && index < 100)
+        return _ideas[index];
+    return "";
+}
 
 /* ************************************************************************** */

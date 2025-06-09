@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:31:22 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 09:58:17 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/06/08 11:20:23 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/08 13:58:05 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/WrongCat.hpp"
+#include "../includes/AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-WrongCat::WrongCat() : WrongAnimal()
-{
-	this->_type = "WrongCat";
-	std::cout << BLUE << this->_type << "was created with default constructor"<< RESET << std::endl;
+
+AMateria::AMateria(std::string const& type) : _type(type) {
+	std::cout << "AMateria constructed with type: " << _type << std::endl;
 }
 
-WrongCat::WrongCat( const WrongCat & src )  : WrongAnimal()
+
+AMateria::AMateria( const AMateria & src )
 {
-	std::cout << BLUE << this->_type << " was copied"<< RESET << std::endl;
+	std::cout << "Materia copied: " << _type << std::endl;
 	*this = src;
 }
 
@@ -33,9 +33,9 @@ WrongCat::WrongCat( const WrongCat & src )  : WrongAnimal()
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-WrongCat::~WrongCat()
+AMateria::~AMateria()
 {
-	std::cout << BLUE << this->_type << " was deleted"<< RESET << std::endl;
+	std::cout << "Materia destroyed: " << _type << std::endl;
 }
 
 
@@ -43,13 +43,12 @@ WrongCat::~WrongCat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongCat &				WrongCat::operator=( WrongCat const & rhs )
+AMateria &				AMateria::operator=( AMateria const & rhs )
 {
-	if ( this != &rhs )
+	if (this != &rhs)
 	{
-		this->_type = rhs._type;
+		std::cout << "AMateria Assignment Operator Called" << std::endl;
 	}
-	std::cout << BLUE << this->_type << ": Copy assignment called"<< RESET << std::endl;
 	return *this;
 }
 
@@ -57,7 +56,9 @@ WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void WrongCat::makeSound(void)const
-{
-	std::cout << BLUE << this->_type << ": *MEEEEOOOOWW*"<< RESET << std::endl;
-}
+/*
+** --------------------------------- ACCESSOR ---------------------------------
+*/
+
+
+/* ************************************************************************** */

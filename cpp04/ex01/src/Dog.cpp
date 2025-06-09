@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:42:17 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:42:18 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 10:35:08 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,9 @@ Dog &				Dog::operator=( Dog const & rhs )
 void Dog::makeSound(void)const
 {
 	std::cout << YELLOW << this->_type << ": *WOOFFF WOFF*"<< RESET << std::endl;
+}
+
+Brain* Dog::getBrain() const
+{
+	return this->_brain;
 }

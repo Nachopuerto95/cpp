@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:42:08 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:42:09 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 10:34:30 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,9 @@ Cat &				Cat::operator=( Cat const & rhs )
 void Cat::makeSound(void)const
 {
 	std::cout << GREEN << this->_type << ": *MEEEEOOOOWW*"<< RESET << std::endl;
+}
+
+Brain* Cat::getBrain() const
+{
+	return this->_brain;
 }

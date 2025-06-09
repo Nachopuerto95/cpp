@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:34:47 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 20:57:30 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 10:58:43 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ class Animal
 
 		Animal(std::string type);
 		Animal( Animal const & src );
-		
+
 		virtual ~Animal();
-		
+
 		Animal &operator=( Animal const & rhs );
-		virtual void makeSound(void)const = 0;
+		virtual void makeSound() const = 0;
 		std::string getType()const;
 		Animal();
-	
+
 	protected:
 		 std::string _type;
 

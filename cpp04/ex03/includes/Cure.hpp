@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 13:39:09 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 10:32:55 by jpuerto          ###   ########.fr       */
+/*   Created: 2025/06/08 14:01:50 by jpuerto           #+#    #+#             */
+/*   Updated: 2025/06/08 14:02:31 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
 # include <string>
+# include "AMateria.hpp"
 
-class Brain
+class Cure: public AMateria
 {
-
 	public:
+        Cure();
+        Cure(Cure const & copy);
 
-		Brain();
-		Brain( Brain const & src );
-		~Brain();
-
-		Brain &		operator=( Brain const & rhs );
-		
-		void setIdea(int index, const std::string& idea);
-    	std::string getIdea(int index) const;
-
-	private:
-		std::string _ideas[100];
-
+        Cure &operator=(Cure const & src);
+        virtual AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
-#endif /* *********************************************************** BRAIN_H */
+std::ostream &			operator<<( std::ostream & o, AMateria const & i );
+
+#endif /* ******************************************************** AMATERIA_H */

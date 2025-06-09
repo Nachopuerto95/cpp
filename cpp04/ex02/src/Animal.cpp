@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:41:48 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 13:41:49 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/05/31 20:47:50 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ std::ostream &			operator<<( std::ostream & o, Animal const & i )
 
 void Animal::makeSound(void)const
 {
-	std::cout << RED << this->_type << ": Animal dont make any sound..."<< RESET << std::endl;
 }
 
 std::string Animal::getType()const

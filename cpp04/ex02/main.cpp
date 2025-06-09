@@ -6,7 +6,7 @@
 /*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:43:55 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/01 12:42:31 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/08 11:06:19 by jpuerto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,46 +17,19 @@
 #include "includes/WrongAnimal.hpp"
 
 
-int main()
-{
+int main() {
 	
-	// // ERROR constructing no inherit classes
-	// const Animal *animal = new Animal();
-	// animal->makeSound();
-	
-	//     // SUBJECT MAIN
-    // const Animal* meta = new Animal();
-	
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    // meta->makeSound();
+    // You can create Animal with subclass
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
-//     // Animal a;
-//     // Cat b;
-//     // Dog c;
+	std::cout << "\n\033[34m--- Deleting Animals ---\033[0m" << std::endl;
+	delete dog;
+	delete cat;
 
-//     // Constructors ANIMAL
-//     // Animal aninoname;              //Empty
-//     // Animal anic( aninoname );         //Copy
-//     // anic = a;                      //Assignment
-//     // Constructors CAT
-//     // Cat catnoname;
-//     // Cat catc( catnoname );
-//     // catc = b;
-//     // Constructors DOG
-//     // Dog dognoname;
-//     // Dog dogc( dognoname );
-//     // dogc = c;
+	// Uncommenting the following line should cause a compile-time error
+	// Animal a; // ❌ Cannot instantiate abstract class
 
-//     // a.makeSound();
-//     // b.makeSound();
-//     // c.makeSound();
-
-    
-//     return (0);
-// }
+	return 0;
 }
+
