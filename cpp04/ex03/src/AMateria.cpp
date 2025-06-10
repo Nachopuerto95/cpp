@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 11:20:23 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 13:58:05 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:13:52 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,17 @@ AMateria &				AMateria::operator=( AMateria const & rhs )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
+void AMateria::use(ICharacter& target)
+{
+	std::cout << "shoots an" << target.getName() << "bolt at " << target.getName() << std::endl;
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+std::string const &AMateria::getType() const
+{
+	return (this->_type);
+}
 
 /* ************************************************************************** */

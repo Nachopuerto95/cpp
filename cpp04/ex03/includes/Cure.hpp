@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:01:50 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 14:02:31 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:14:14 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ class Cure: public AMateria
         Cure(Cure const & copy);
 
         Cure &operator=(Cure const & src);
-        virtual AMateria* clone() const;
-        void use(ICharacter& target);
+        AMateria* clone() const;
 };
 
 std::ostream &			operator<<( std::ostream & o, AMateria const & i );

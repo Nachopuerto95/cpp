@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:42:32 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 13:44:40 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:01:01 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 
 class MateriaSource: public IMateriaSource
 {
+    protected:
+        AMateria *_book[4]; 
     public:
-        virtual ~MateriaSource() {}
-        virtual void learnMateria(AMateria*);
-        virtual AMateria* createMateria(std::string const & type);
+        MateriaSource();
+        ~MateriaSource();
+        void learnMateria(AMateria* materia);
+        AMateria* createMateria(std::string const & type);
 };
 
 std::ostream &			operator<<( std::ostream & o, AMateria const & i );

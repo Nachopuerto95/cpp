@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:01:53 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 14:02:37 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:14:10 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Ice: public AMateria
 
         Ice &operator=(Ice const & src);
         AMateria* clone() const;
-        void use(ICharacter& target);
 };
 
 std::ostream &			operator<<( std::ostream & o, AMateria const & i );

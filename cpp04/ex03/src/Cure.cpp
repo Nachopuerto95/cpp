@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 11:52:53 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 12:50:35 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:14:28 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ Cure &Cure::operator=(const Cure & src)
 
 AMateria* Cure::clone() const {
     return new Cure(*this);
-}
-
-void Cure::use(ICharacter& target) 
-{
-    std::cout << "Heals " << target.getName()<< "'s wounds" << std::endl;
 }

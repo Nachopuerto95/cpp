@@ -1,12 +1,14 @@
+NAME = a.out
+
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRCS = src/AMateria.cpp src/ICharacter.cpp src/main.cpp
+SRCS = src/main.cpp src/Character.cpp src/AMateria.cpp src/Ice.cpp src/Cure.cpp src/MateriaSource.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
@@ -14,7 +16,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f a.out
+	rm -f $(NAME)
 
 re: fclean all
 

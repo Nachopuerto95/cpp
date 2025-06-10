@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 12:34:09 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/08 14:01:11 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 15:07:04 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,15 @@ class Character : public ICharacter {
     public:
         // Character();
         Character(const std::string& name);
+        Character( const Character & src );
         virtual ~Character();
         
-        //copy
-        //operator =
-        //setname
+        Character& operator=(const Character& other);
 
-        virtual std::string const & getName() const override;
-        virtual void equip(AMateria* m) override;
-        virtual void unequip(int idx) override;
-        virtual void use(int idx, ICharacter& target) override;
+        virtual std::string const & getName() const;
+        virtual void equip(AMateria* m);
+        virtual void unequip(int idx);
+        virtual void use(int idx, ICharacter& target);
 
 };
 
