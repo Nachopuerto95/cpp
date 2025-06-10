@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 12:34:09 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 15:07:04 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:18:21 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ class Character : public ICharacter {
         virtual void equip(AMateria* m);
         virtual void unequip(int idx);
         virtual void use(int idx, ICharacter& target);
+        int inInventory(AMateria *m);
+
 
 };
 

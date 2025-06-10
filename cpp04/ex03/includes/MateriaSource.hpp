@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:42:32 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 15:01:01 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:47:25 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class MateriaSource: public IMateriaSource
         AMateria *_book[4]; 
     public:
         MateriaSource();
-        ~MateriaSource();
+        virtual ~MateriaSource();
         void learnMateria(AMateria* materia);
         AMateria* createMateria(std::string const & type);
 };

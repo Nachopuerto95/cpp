@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 13:45:06 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 15:23:28 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:04:11 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria* materia)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if (!_book[i])
-        {   
-            _book[i] = materia->clone();
-            return ;
+    for (int i = 0; i < 4; i++) {
+        if (!_book[i]) 
+        {
+            _book[i] = materia;
+            std::cout << "Learned materia type: " << _book[i]->getType() << std::endl;
+            return;
         }
     }
     std::cout << "Not enough space in materia source..." << std::endl;
@@ -46,7 +46,9 @@ AMateria *MateriaSource::createMateria(std::string const & name)
     for (int i = 0; i < 4; i++)
     {
         if (_book[i] && _book[i]->getType() == name)
+        {
             return _book[i]->clone();
+        }
     }
     std::cout << "Cant find materia: "<< name << std::endl;
     return NULL;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 13:41:48 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 20:47:50 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/06/10 16:12:47 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ Animal &				Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i )
+std::ostream &operator<<( std::ostream & o, Animal const & i )
 {
 	o << RED << "Type = " << i.getType() << RESET;
 	return o;

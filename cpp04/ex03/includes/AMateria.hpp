@@ -13,16 +13,17 @@ class AMateria
 		std::string const _type;
 	public:
 
-	// COMPLETE ORTODOX STUFF
 		AMateria() {};
 		AMateria(std::string const & type);
 		AMateria(const AMateria& copy);
 		virtual ~AMateria();
 	
-		AMateria &operator=(AMateria const & src);
+		AMateria const	&operator=(AMateria const &copy);
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target) ;
 };
+std::ostream &			operator<<( std::ostream & o, AMateria const & i );
+std::ostream &			operator<<( std::ostream & o, AMateria const *i );
 
 #endif /* ******************************************************** AMATERIA_H */

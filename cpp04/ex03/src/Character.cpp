@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 11:22:51 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 14:59:33 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:18:00 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Character::Character(std::string const& name) : _name(name), _droppedIndex(0)
         _inventory[i] = NULL;
     for (int i = 0; i < 100; ++i)
         _dropped[i] = NULL;
+    std::cout << "Character was created with name: " << this->_name << std::endl;
 }
 Character::Character( const Character & src )
 {
@@ -91,24 +92,35 @@ Character& Character::operator=(const Character& other)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Character::equip(AMateria* m)
+void	Character::equip(AMateria *m)
 {
-    if (!m)
-        return ;
-    for (int i = 0; i < 4; i++)
-    {
-        if (!this->_inventory[i])
-        {   
-            this->_inventory[i] = m; // = operator in materia?
-            return ;
-        }
-    }
+	for (int i = 0; i < 4; i++)
+	{
+		if (m && this->_inventory[i] == NULL)
+		{
+			if (this->inInventory(m))
+				this->_inventory[i] = m->clone();
+			else
+				this->_inventory[i] = m;
+			std::cout << "Materia " << this->_inventory[i]->getType() << " equipped to " << this->_name << "'s inventory at index " << i << std::endl;
+			return ;
+		}
+	}
+	if (m)
+		std::cout << "Cannot equip materia, " << this->_name << "'s inventory is full!" << std::endl;
+	else
+		std::cout << "Cannot equip invalid materia" << std::endl;
+	if (!this->inInventory(m))
+		delete m;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
     if (idx < 4 && idx >= 0 && _inventory[idx] != NULL)
+    {
+        std::cout << this->_name << " ";
         _inventory[idx]->use(target);
+    }
     return ;
 }
 
@@ -125,9 +137,21 @@ void Character::unequip(int idx)
     std::cout << this->_name << " dropped " << _inventory[idx]->getType() << " materia." << std::endl; 
     this->_inventory[idx] = NULL;
 }
+
+int Character::inInventory(AMateria *m)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i] == m)
+			return (1);
+	}
+	return (0);
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+
 
 std::string const &Character::getName()const
 {

@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 11:20:23 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 15:13:52 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:25:36 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ AMateria::AMateria(std::string const& type) : _type(type) {
 
 AMateria::AMateria( const AMateria & src )
 {
-	std::cout << "Materia copied: " << _type << std::endl;
+	std::cout << "Materia copied: " << src._type << std::endl;
 	*this = src;
 }
 
@@ -35,7 +35,6 @@ AMateria::AMateria( const AMateria & src )
 
 AMateria::~AMateria()
 {
-	std::cout << "Materia destroyed: " << _type << std::endl;
 }
 
 
@@ -43,13 +42,23 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AMateria &				AMateria::operator=( AMateria const & rhs )
+AMateria const	&AMateria::operator=(AMateria const &copy)
 {
-	if (this != &rhs)
-	{
-		std::cout << "AMateria Assignment Operator Called" << std::endl;
-	}
-	return *this;
+	this->_type = copy._type;
+	std::cout << "AMateria Assignment Operator Called" << std::endl;
+	return (*this);
+}
+
+std::ostream &operator<<( std::ostream & o, AMateria const & i )
+{
+	o << "Type = " << i.getType();
+	return o;
+}
+
+std::ostream &operator<<( std::ostream & o, AMateria const *i )
+{
+	o << "Type = " << i->getType();
+	return o;
 }
 
 /*
@@ -57,7 +66,8 @@ AMateria &				AMateria::operator=( AMateria const & rhs )
 */
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "shoots an" << target.getName() << "bolt at " << target.getName() << std::endl;
+	(void)target;
+	return ;
 }
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
