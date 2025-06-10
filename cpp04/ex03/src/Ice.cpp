@@ -6,7 +6,7 @@
 /*   By: jpuerto- <jpuerto-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 11:52:53 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/06/10 19:12:31 by jpuerto-         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:30:07 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ void Ice::use(ICharacter& target)
 }
 
 AMateria* Ice::clone() const {
-    std::cout << this->getType() << " was cloned" << std::endl;
     return new Ice(*this);
 }
