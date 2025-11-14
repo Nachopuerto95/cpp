@@ -28,38 +28,61 @@ void PhoneBook::welcome()
 
 void PhoneBook::addContact()
 {
-   std::string firstname;
-   std::string lastname;
-   std::string nickname;
-   std::string phone;
-   std::string darkestSecret;
+    std::string firstname;
+    std::string lastname;
+    std::string nickname;
+    std::string phone;
+    std::string darkestSecret;
 
-   this->empty = false;
+    while (true)
+    {
+        std::cout << "Enter first name: ";
+        getline(std::cin, firstname);
+        if (!firstname.empty()) break;
+        std::cout << RED << "First name cannot be empty!" << RESET << std::endl;
+    }
 
-   std::cout << "Enter first name: ";
-   getline(std::cin, firstname);
+    while (true)
+    {
+        std::cout << "Enter last name: ";
+        getline(std::cin, lastname);
+        if (!lastname.empty()) break;
+        std::cout << RED << "Last name cannot be empty!" << RESET << std::endl;
+    }
 
-   std::cout << "Enter last name: ";
-   getline(std::cin, lastname);
+    while (true)
+    {
+        std::cout << "Enter nickname: ";
+        getline(std::cin, nickname);
+        if (!nickname.empty()) break;
+        std::cout << RED << "Nickname cannot be empty!" << RESET << std::endl;
+    }
 
-   std::cout << "Enter nickname: ";
-   getline(std::cin, nickname);
+    while (true)
+    {
+        std::cout << "Enter phone: ";
+        getline(std::cin, phone);
+        if (!phone.empty()) break;
+        std::cout << RED << "Phone cannot be empty!" << RESET << std::endl;
+    }
 
-   std::cout << "Enter phone: ";
-   getline(std::cin, phone);
+    while (true)
+    {
+        std::cout << "Enter darkest secret: ";
+        getline(std::cin, darkestSecret);
+        if (!darkestSecret.empty()) break;
+        std::cout << RED << "Darkest secret cannot be empty!" << RESET << std::endl;
+    }
 
-   std::cout << "Enter darkest secret: ";
-   getline(std::cin, darkestSecret);
+    std::cout << BRIGHT_CYAN << "----------------------------------------------------------" << RESET << std::endl;
+    std::cout << GREEN << "                Contact created!" << RESET << std::endl;
+    std::cout << BRIGHT_CYAN << "----------------------------------------------------------" << RESET << std::endl;
 
-   std::cout << BRIGHT_CYAN <<  "----------------------------------------------------------" << RESET << std::endl ;
-   std::cout << GREEN <<  "               Contact created!" << RESET << std::endl ;
-   std::cout << BRIGHT_CYAN <<  "----------------------------------------------------------" << RESET << std::endl ;
-  
-   int index = (count < 8) ? count : 7;
+    int index = count % 8;
     this->contacts[index] = Contact(index + 1, firstname, lastname, nickname, phone, darkestSecret);
+
     if (count < 8)
         count++;
-
 }
 
 std::string formated(std::string str)
@@ -97,10 +120,6 @@ void PhoneBook::search()
         std::cout << formated(contacts[i].getValue("lastname"));
         std::cout << "|";
         std::cout << formated(contacts[i].getValue("nickname"));
-        std::cout << "|";
-        std::cout << formated(contacts[i].getValue("phone"));
-        std::cout << "|";
-        std::cout << formated(contacts[i].getValue("secret"));
         std::cout << std::endl;
     }
     std::cout << BRIGHT_CYAN << std::endl << "----------------------------------------------------------" << RESET << std::endl ;
