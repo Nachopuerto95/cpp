@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student-42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 12:50:38 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 12:50:39 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/11/17 16:29:42 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main() {
     PhoneBook book;
     
     book.printHeader("phonebook");
-    // book.fillTestContacts();
+    book.fillTestContacts();
     while (true) 
     {
         book.welcome();

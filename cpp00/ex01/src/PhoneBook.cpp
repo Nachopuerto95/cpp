@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpuerto <jpuerto@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jpuerto- <jpuerto-@student-42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 12:50:35 by jpuerto           #+#    #+#             */
-/*   Updated: 2025/05/31 12:50:36 by jpuerto          ###   ########.fr       */
+/*   Updated: 2025/11/17 16:46:19 by jpuerto-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,8 @@ void PhoneBook::addContact()
 
     int index = count % 8;
     this->contacts[index] = Contact(index + 1, firstname, lastname, nickname, phone, darkestSecret);
-
-    if (count < 8)
-        count++;
+	count++;
+	this->empty = false;
 }
 
 std::string formated(std::string str)
@@ -111,7 +110,9 @@ void PhoneBook::search()
         return ;
     }
     std::cout << GREEN << std::endl << " INDEX    |FIRST NAME|LAST NAME |NICKNAME  " << RESET << std::endl << std::endl;
-    for (int i = 0; i < count; i++)
+   
+	int max = (count < 8) ? count : 8;
+	for (int i = 0; i < max; i++)
     {
         std::cout << GREEN << "  #" << contacts[i].getIndex() << RESET << "      ";
         std::cout << "|";
